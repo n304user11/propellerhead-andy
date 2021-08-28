@@ -47,7 +47,7 @@ namespace Propellerhead_Andy.Controllers
             return customer.AsDto(notes);
         }
 
-        // GET /item/field
+        // GET /customer/field
         [HttpGet("field")]
         public async Task<IEnumerable<CustomerDto>> GetCustomerByFieldAsync([FromQuery]Status status = Status.None, [FromQuery]string name = null, [FromQuery]string contactNumber = null)
         {
@@ -56,7 +56,7 @@ namespace Propellerhead_Andy.Controllers
             return customers;
         }
 
-        // POST /item
+        // POST /customer
         [HttpPost]
         public async Task<ActionResult<CustomerDto>> CreateCustomerAsync(CreateCustomerDto customerDto)
         {
@@ -75,7 +75,7 @@ namespace Propellerhead_Andy.Controllers
 
         }
 
-        // PUT /item/{id}
+        // PUT /customer/{id}
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateCustomerAsync(Guid id, UpdateCustomerDto customerDto)
         {
@@ -98,7 +98,7 @@ namespace Propellerhead_Andy.Controllers
             return NoContent();
         }
 
-
+        // DELETE /customer/{id}
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteCustomerAsync(Guid id)
         {
